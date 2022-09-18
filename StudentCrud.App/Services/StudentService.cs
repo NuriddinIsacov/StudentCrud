@@ -75,5 +75,12 @@ namespace StudentCrud.App.Services
             else
                 return null;
         }
+
+
+        public async Task<IReadOnlyList<StudentDto>> GetSortedStudents()
+        {
+            return mapper.Map<IReadOnlyList<StudentDto>>(await studentRepositori.GetSortedStudentByName());
+
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace StudentCrud.Infrasturcture.Interfaces
 {
     public interface IStudentRepositoryAsync : IGenericRepositoryAsync<StudentEntity>
     {
+         Task<IReadOnlyList<StudentEntity>> GetSortedStudentByName();
+
     }
 }

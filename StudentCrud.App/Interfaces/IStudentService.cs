@@ -18,5 +18,8 @@ namespace StudentCrud.App.Interfaces
         Task<IReadOnlyList<StudentDto>> GetAlAsync();
 
         Task<StudentDto> UpdateStudentAsync(int id, StudentForCreationDto studentDto);
+
+        Task<IReadOnlyList<StudentDto>> GetSortedStudents();
+
     }
 }

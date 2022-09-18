@@ -18,6 +18,16 @@ namespace StudentCrud.Infrasturcture.Repositories
             student = context.Set<StudentEntity>();
 
         }
+        
+        public async  Task<IReadOnlyList<StudentEntity>> GetSortedStudentByName()
+        {
+            var query = "SELECT * FROM dbo.Students" +
+                                "ORDER BY LastName";
+
+            var sortedstudents = await student.FromSqlRaw(query).ToListAsync();
+
+            return sortedstudents;
+        }
 
     }
 }

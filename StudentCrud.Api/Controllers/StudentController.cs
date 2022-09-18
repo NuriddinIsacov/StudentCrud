@@ -55,5 +55,10 @@ namespace StudentCrud.Api.Controllers
             await studentService.DeleteStudent(id);
         }
 
+        public async Task<IReadOnlyList<StudentDto>> GetSortedStudentsAsync()
+        {
+            return await studentService.GetSortedStudents();
+        }
+
     }
 }
